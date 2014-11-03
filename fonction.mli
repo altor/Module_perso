@@ -6,3 +6,4 @@ val (|-) : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b
     c'est juste pour ne pas utiliser les paranthése
 *)
 val ($) : ('a -> 'b) -> 'a -> 'b
+
