@@ -1,5 +1,5 @@
-MLI=array_mp.mli fonction.mli list_mp.mli string_mp.mli
-CMO=array_mp.cmo fonction.cmo list_mp.cmo string_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo
+MLI=array_mp.mli fonction.mli list_mp.mli string_mp.mli matrix.mli
+CMO=array_mp.cmo fonction.cmo list_mp.cmo string_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo matrix.cmo
 
 main: ${CMO}
 	ocamlc -a -o mp.cma ${CMO}
