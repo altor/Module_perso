@@ -1,22 +1,25 @@
-open Fonction
+module type Interface = sig
+    type 'a m
+    val return : 'a -> 'a m
+    val (>>=) : 'a m -> ('a -> 'b m) -> 'b m
+  end
 
-module type Monade_type = sig
-  type 'a m
-  val return : 'a -> 'a m
-  val ( >>= ) : 'a m -> ('a -> 'b m) -> 'b m
-end
-
-
-(* sig *)
-(*   include Monade_type   *)
-(*   val bindable : ('a -> 'b) -> 'a -> 'b m *)
-(*   val double_bind : 'a m -> 'b m -> ('a -> ('b -> 'c) m) -> 'c m *)
-(* end *)
-
-module Monade = functor (M : Monade_type) -> struct
-  type 'a m = 'a M.m
-  let return = M.return
-  let ( >>= ) = M.(>>=)
-  let bindable f = return |- f
-  let double_bind m1 m2 f = (m1 >>= f) >>= (fun f  -> m2 >>= (bindable f))
-end
+module Make (M : Interface) : sig
+    include Interface with type 'a m = 'a M.m
+    val (<$>) : ('a -> 'b) -> 'a m -> 'b m
+    val (<*>) : ('a -> 'b) m -> 'a m -> 'b m
+    val (>>) : 'a m -> 'b m -> 'b m
+    val join : ('a m) m -> 'a m
+  end = 
+  struct
+    type 'a m = 'a M.m
+    let return = M.return
+    let (>>=) = M.(>>=)
+    let comp f g x = f (g x)
+    let bindable f = comp return f
+    let id x = x
+    let (<$>) f m = m >>= (bindable f)
+    let (<*>) mf m = mf >>= fun f -> f <$> m
+    let (>>) ma mb = ma >>= (fun _ -> mb)
+    let join mm = mm >>= id
+  end
