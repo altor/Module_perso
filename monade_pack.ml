@@ -51,7 +51,3 @@ module State =
     module Make (M : TYPE) = 
       Monade.Make(MAKE(M))
   end
-	
-	
-      
-
