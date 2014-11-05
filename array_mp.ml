@@ -14,24 +14,18 @@ let l_shift tab index n =
     done
       
 
-let shuffle tab = 
+let shuffle tab =
   Random.self_init ();
-  let t = Array.length tab in
-  let tab2 = Array.make t (tab.(0))
-  in let rec aux taille = 
-       if taille = 1 then begin
-	 tab2.(0) <- tab.(0);
-	 tab2
-       end
-       else begin 
-	 let i = Random.int taille
-	 in tab2.(taille-1) <- tab.(i);
-	 if i != taille - 1 then
-	   l_shift tab (i+1) 1
-	 else ();
-	 aux (taille - 1)
-       end
-     in aux t
+  let taille = Array.length tab
+  in let tab2 = Array.make taille tab.(0)
+     in let rec aux tab taille =
+	  if taille = 0 then ()
+	  else begin
+	      let i = Random.int taille
+	      in tab2.(taille - 1) <- tab.(i);
+		 aux (Array.append (Array.sub tab 0 i) (Array.sub tab (i + 1) (taille - (i + 1)))) (taille - 1)
+	      end
+	in aux tab taille
 	     
 	   
     
