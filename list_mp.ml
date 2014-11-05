@@ -12,7 +12,6 @@ let rec drop n = function
   
 
 
-
 let shuffle liste =
   Array.to_list (Array_mp.shuffle (Array.of_list liste))
 
