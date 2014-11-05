@@ -14,4 +14,4 @@ val drop : int -> 'a list -> 'a list
 
 (** {Transformation de la liste}*)
 (** renvoi une nouvelle liste mélangé aléatoirement*)
-val blend : 'a list -> 'a list
+val shuffle : 'a list -> 'a list

@@ -12,17 +12,8 @@ let rec drop n = function
   
 
 
-let blend liste  =
-  Random.self_init ();
-  let rec aux acc taille = function
-    | [] -> acc
-    | liste -> let i = Random.int taille
-	       in let l1 = take i liste
-		  in let l2 = drop i liste
-		     in let l3 = List.tl l2
-			in let elem = List.hd l2
-			   in let liste_final = l1 @ l3
-			      in aux (elem::acc) (taille - 1) liste_final
-  in aux [] (List.length liste) liste
+
+let shuffle liste =
+  Array.to_list (Array_mp.shuffle (Array.of_list liste))
 
 
