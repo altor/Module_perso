@@ -25,8 +25,7 @@ let shuffle tab =
        end
        else begin 
 	 let i = Random.int taille
-	 in Printf.printf "%d %d\n" taille i;
-	 tab2.(taille-1) <- tab.(i);
+	 in tab2.(taille-1) <- tab.(i);
 	 if i != taille - 1 then
 	   l_shift tab (i+1) 1
 	 else ();
