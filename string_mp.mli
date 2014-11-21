@@ -28,6 +28,8 @@ val take: int -> string -> string
 (** [drop n chaine] renvoi une copie de chaine privée de ces n premiers caractére. *)
 val drop : int -> string -> string
 
+(** [last_n n chaine] renvoi les n derniers caractére de chaine *)
+val last_n : int -> string -> string
 (** [cons carac chaine] ajoute carac au début de la chaine de caractére. *)
 val cons : char -> string -> string
 
