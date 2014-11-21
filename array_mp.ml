@@ -25,7 +25,8 @@ let shuffle tab =
 	      in tab2.(taille - 1) <- tab.(i);
 		 aux (Array.append (Array.sub tab 0 i) (Array.sub tab (i + 1) (taille - (i + 1)))) (taille - 1)
 	      end
-	in aux tab taille
+	in aux tab taille;
+	tab2
 	     
 	   
     
