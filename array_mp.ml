@@ -1,9 +1,16 @@
-let index_of tab elem =
+
+
+let m_index_of tab elem =
   let rec aux = function
     | i when i = Array.length tab -> None
     | i when tab.(i) = elem -> Some i
     | i -> aux (i+1)
   in aux 0
+
+let index_of tab elem = 
+  match m_index_of tab elem with
+    Some i -> i
+  | None -> failwith "Array_mp.index_of : élément non présent dans le tableau"
 
 let l_shift tab index n =
   let taille = Array.length tab in

@@ -1,5 +1,8 @@
-(** [index_of tab elem] renvoi un type option contenant l'index de la premiére ocurence de elem dans tab ou None si tab ne contient pas elem*)
-val index_of : 'a array -> 'a -> int option
+(** [index_of tab elem] renvoi l'index de la premiére ocurence de elem dans tab ou une exeption   si tab ne contient pas elem*)
+val index_of : 'a array -> 'a -> int
+
+(** [m_index_of tab elem] renvoi un type option contenant l'index de la premiére ocurence de elem dans tab ou None si tab ne contient pas elem*)
+val m_index_of : 'a array -> 'a -> int option
 
 (** mélange les éléments du tableau passé en argument*)
 val shuffle : 'a array -> 'a array
