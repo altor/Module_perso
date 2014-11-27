@@ -14,3 +14,8 @@ module String : (Monoide.Interface with type m = string) = struct
     let combine = (^)
 end
 
+module Int_plus : (Monoide.Interface with type m = int) = struct
+  type m = int
+  let neutre = 0
+  let combine = (+)
+end
