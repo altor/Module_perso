@@ -7,3 +7,8 @@ val (|-) : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b
 *)
 val ($) : ('a -> 'b) -> 'a -> 'b
 
+(** fonction identité *)
+val id : 'a -> 'a
+
+(** fonction couple *)
+val couple : 'a -> 'b -> 'a * 'b
