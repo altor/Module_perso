@@ -16,3 +16,10 @@ let shuffle liste =
   Array.to_list (Array_mp.shuffle (Array.of_list liste))
 
 
+let of_string chaine =
+  let taille = String.length chaine
+  in let rec aux i acc =
+       if i < 0
+       then acc
+       else aux (i - 1) ((chaine.[i])::acc)
+     in aux (taille - 1) []

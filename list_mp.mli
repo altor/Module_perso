@@ -12,6 +12,10 @@ val take : int -> 'a list -> 'a list
  t étant la taille de l *)
 val drop : int -> 'a list -> 'a list
 
-(** {Transformation de la liste}*)
+(** {Transformation de liste}*)
 (** renvoi une nouvelle liste mélangé aléatoirement*)
 val shuffle : 'a list -> 'a list
+
+(** {Conversion}*)
+(** [of_string chaine] convertie une chaine de caractére en liste *)
+val of_string : string -> char list
