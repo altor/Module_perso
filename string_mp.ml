@@ -22,3 +22,14 @@ let last_n n chaine =
   let taille = String.length chaine
   in if n > taille then failwith "String_mp.last_n : chaine trop courte"
     else String.sub chaine (taille - n) n
+
+let of_list liste =
+  let taille = List.length liste
+  in let chaine = String.create taille
+     in let rec aux i liste =
+	  if i = taille
+	  then chaine
+	  else begin chaine.[i] <- (List.hd liste);
+	    aux (i+1) (List.tl liste)
+	  end
+	in aux 0 liste

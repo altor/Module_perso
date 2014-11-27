@@ -33,6 +33,5 @@ val last_n : int -> string -> string
 (** [cons carac chaine] ajoute carac au début de la chaine de caractére. *)
 val cons : char -> string -> string
 
-
-
-
+(** [of_list liste] renvoi une string ou chaque caractére est un élément de [liste] *)
+val of_list : char list -> string
