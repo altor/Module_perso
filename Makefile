@@ -29,12 +29,12 @@ doc: ${MLI}
 clean_all: clean clean_out clean_doc 
 
 clean_out:
-	rm mp.cma mp_toplevel
+	rm -f mp.cma mp_toplevel
 
 clean_doc:
-	rm -R ./Doc
+	rm -Rf ./Doc
 
 clean:
-	rm *.cmo
-	rm *.cmi
+	rm -f *.cmo
+	rm -f *.cmi
 
