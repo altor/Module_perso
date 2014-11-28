@@ -9,3 +9,6 @@ let pow_int a n =
       if n = 0 then acc
       else aux (acc * a) (n - 1)
   in aux 1 n  
+
+let eucl_div n1 n2 =
+  ( n1 / n2, n1 mod n2)
