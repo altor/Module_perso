@@ -1,3 +1,12 @@
+(** [max_i compare tab] renvoi l'indice du plus grand élément de [tab] en utilisant la fonction [compare] pour comparer les éléments de [tab] entre eux
+renvoi toujours le plus petit indice si plusieurs éléments sont les plus grand*)
+val max_i : ('a -> 'a -> int) -> 'a array -> int
+
+(** [max compare tab] renvoi le plus grand élément de [tab] en utilisant la fonction [compare] pour comparer les éléments de [tab] entre eux
+renvoi toujours l'élément d'indice le plus petit si plusieurs élément sont les plus grands*)
+val max : ('a -> 'a -> int) -> 'a array -> 'a
+
+
 (** [index_of tab elem] renvoi l'index de la premiére ocurence de elem dans tab ou une exeption   si tab ne contient pas elem*)
 val index_of : 'a array -> 'a -> int
 

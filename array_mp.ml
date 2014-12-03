@@ -1,4 +1,21 @@
 
+let max_i compare tab =
+  let taille = Array.length tab
+  in if taille = 0 
+    then failwith "Array_mp.max_i : Tableau vide"
+    else 
+      let rec aux i max i_max = 
+	  if i = taille then i_max
+	  else let elem = tab.(i)
+	       in if compare elem max = 1 
+		 then aux (i + 1) elem i
+		 else aux (i + 1) max i_max
+      in aux 1 tab.(0) 0
+
+let max compare tab =
+  if tab = [||] then failwith "Array_mp.max : Tableau vide"
+  else let i = max_i compare tab
+       in tab.(i)
 
 let m_index_of tab elem =
   let rec aux = function
