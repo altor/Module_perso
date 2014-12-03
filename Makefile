@@ -1,3 +1,5 @@
+
+OUT=mp.cma mp_toplevel
 MLI=array_mp.mli fonction.mli list_mp.mli string_mp.mli matrix.mli math.mli
 CMO=array_mp.cmo fonction.cmo list_mp.cmo string_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo matrix.cmo math.cmo
 
@@ -24,17 +26,15 @@ monoide_pack.cmo: monoide.cmo
 doc: ${MLI}
 	ocamldoc -d Doc -html -charset utf8 ${MLI}
 
-
-
-clean_all: clean clean_out clean_doc 
+clean_obj:
+	rm -f *.cmo
+	rm -f *.cmi
 
 clean_out:
-	rm -f mp.cma mp_toplevel
+	rm -f $(OUT)
 
 clean_doc:
 	rm -Rf ./Doc
 
-clean:
-	rm -f *.cmo
-	rm -f *.cmi
+clean: clean_doc clean_out clean_obj
 
