@@ -36,5 +36,8 @@ clean_out:
 clean_doc:
 	rm -Rf ./Doc
 
+
+
 clean: clean_doc clean_out clean_obj
+	rm *~
 
