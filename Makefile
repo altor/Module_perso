@@ -1,7 +1,7 @@
 
 OUT=mp.cma mp_toplevel
 MLI=array_mp.mli fonction.mli list_mp.mli string_mp.mli matrix.mli math.mli hash.mli
-CMO=array_mp.cmo fonction.cmo list_mp.cmo string_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo matrix.cmo math.cmo hash.ml
+CMO=array_mp.cmo fonction.cmo list_mp.cmo string_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo matrix.cmo math.cmo hash.cmo
 
 main: ${CMO}
 	ocamlc -a -o mp.cma ${CMO}
@@ -39,5 +39,5 @@ clean_doc:
 
 
 clean: clean_doc clean_out clean_obj
-	rm *~
+	rm -f *~
 
