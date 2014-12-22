@@ -10,6 +10,7 @@ module Make (M : Interface) : sig
     val (<*>) : ('a -> 'b) m -> 'a m -> 'b m
     val (>>) : 'a m -> 'b m -> 'b m
     val join : ('a m) m -> 'a m
+    val foldm : ('b -> 'a -> 'a m) -> 'a -> 'b list -> 'a m
   end = 
   struct
     type 'a m = 'a M.m
@@ -22,4 +23,8 @@ module Make (M : Interface) : sig
     let (<*>) mf m = mf >>= fun f -> f <$> m
     let (>>) ma mb = ma >>= (fun _ -> mb)
     let join mm = mm >>= id
+    let foldm f acc l =
+      let p acc2 elem =
+	acc2 >>= f elem
+      in List.fold_left p (return acc) l
   end
