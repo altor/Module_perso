@@ -10,13 +10,13 @@ top: ${CMO}
 	ocamlmktop -o mp_toplevel ${CMO}
 
 
-monade_pack.cmo: monade.cmo monoide.cmo
+monade_pack.cmo: monade.cmo monoide.cmo monade_pack.ml
 	ocamlc -c monade_pack.ml
-monade.cmo:
+monade.cmo: monade.ml
 	ocamlc -c monade.ml
-monoide.cmo:
+monoide.cmo: monoide.ml
 	ocamlc -c monoide.ml
-monoide_pack.cmo: monoide.cmo
+monoide_pack.cmo: monoide.cmo monoide_pack.ml
 	ocamlc -c monoide_pack.ml
 
 %.cmo: %.ml %.mli
