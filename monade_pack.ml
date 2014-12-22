@@ -48,6 +48,9 @@ module State =
 				 in let g = f value
 				    in g new_state
       end
-    module Make (M : TYPE) = 
-      Monade.Make(MAKE(M))
+    module Make (M : TYPE) = struct
+	include Monade.Make(MAKE(M))
+	let get_val (v,_) = v
+	let get_state (_,s) = s
+      end
   end
