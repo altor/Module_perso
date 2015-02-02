@@ -25,4 +25,6 @@ let iteri f m =
   let f2 i = Array.iteri (f i)
   in Array.iteri f2 m
       
-  
+let fold_left f acc m =
+  let f2 acc2 = Array.fold_left f acc2 
+  in Array.fold_left f2 acc m
