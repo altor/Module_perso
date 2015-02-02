@@ -1,12 +1,8 @@
-let init h l  f =
-  let m = Array.make_matrix h l (f 0 0)
-  in let rec aux i =
-       if i = h then m
-       else let rec aux2 j =
-	      if j = l then ()
-	      else (m.(i).(j) <- (f i j); aux2 (j+1))
-	    in (aux2 0; aux (i+1))
-     in aux 0
+
+let init h l f =
+  let rev f i j = f j i
+  in let p i = Array.init l ((rev f) i )
+  in Array.init h p
 
 let length m =
   (Array.length m, Array.length m.(0))
