@@ -34,7 +34,7 @@ clean_out:
 	rm -f $(OUT)
 
 clean_doc:
-	rm -Rf ./Doc
+	rm -Rf ./Doc/*
 
 
 

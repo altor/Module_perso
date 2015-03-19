@@ -25,11 +25,11 @@ let last_n n chaine =
 
 let of_list liste =
   let taille = List.length liste
-  in let chaine = Bytes.create taille
+  in let chaine = String.create taille
      in let rec aux i liste =
 	  if i = taille
 	  then chaine
-	  else begin Bytes.set chaine i (List.hd liste);
+	  else begin String.set chaine i (List.hd liste);
 	    aux (i+1) (List.tl liste)
 	  end
 	in aux 0 liste

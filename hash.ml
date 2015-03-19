@@ -8,9 +8,9 @@ let clear tbl =
   let _ = Hashtbl.clear tbl
   in ((), tbl)
 
-let reset tbl = 
-  let _ = Hashtbl.reset tbl
-  in ((), tbl)
+(* let reset tbl =  *)
+(*   let _ = Hashtbl.reset tbl *)
+(*   in ((), tbl) *)
 
 let add x y tbl =
   let tbl2 = copy tbl

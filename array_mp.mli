@@ -1,3 +1,7 @@
+(** [contains elem tab] renvoie [true] si [elem] est présent dans [tab], [false] sinon
+ *)
+val contains : 'a -> 'a array -> bool
+
 (** [max_i compare tab] renvoi l'indice du plus grand élément de [tab] en utilisant la fonction [compare] pour comparer les éléments de [tab] entre eux
 renvoi toujours le plus petit indice si plusieurs éléments sont les plus grand*)
 val max_i : ('a -> 'a -> int) -> 'a array -> int

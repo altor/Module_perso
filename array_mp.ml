@@ -1,3 +1,9 @@
+let contains elem tab  =
+  let rec aux = function
+    | i when i = Array.length tab -> false
+    | i when tab.(i) = elem -> true
+    | i -> aux (i+1)
+  in aux 0
 
 let max_i compare tab =
   let taille = Array.length tab
