@@ -33,3 +33,11 @@ let of_list liste =
 	    aux (i+1) (List.tl liste)
 	  end
 	in aux 0 liste
+
+let fold_left f s a =
+  let t = String.length s
+  in let rec aux i acc =
+       if i = t then acc
+       else aux (i+1) (f acc s.[i])
+     in aux 0 a
+	       

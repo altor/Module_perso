@@ -35,3 +35,6 @@ val cons : char -> string -> string
 
 (** [of_list liste] renvoi une string ou chaque caractére est un élément de [liste] *)
 val of_list : char list -> string
+
+(** [fold_left f acc s] est équivalent à [ f (... (f (f acc s.[0]) s.[1]) ...) s.[n-1]]. [s] étant une chaine de caractére de taille n *)
+val fold_left : ('a -> char -> 'a) -> string -> 'a -> 'a
