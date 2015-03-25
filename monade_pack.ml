@@ -7,8 +7,11 @@ module OPTION : Monade.Interface with type 'a m = 'a option = struct
       | None -> None
   end
 
-module Option = Monade.Make(OPTION)
-
+module Option =
+  struct
+    include Monade.Make(OPTION) 
+    let safe f x = try Some (f x) with _ -> None
+  end
 module LISTE : (Monade.Interface with type 'a m = 'a list) = struct
     type 'a m = 'a list
     let return x = [x]
