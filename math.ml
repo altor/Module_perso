@@ -11,3 +11,6 @@ let rec pow_int a n =
 
 let eucl_div n1 n2 =
   ( n1 / n2, n1 mod n2)
+
+let (//) n1 n2 =
+  (float_of_int n1) /. (float_of_int n2)
