@@ -58,5 +58,9 @@ let shuffle tab =
 	in aux tab taille;
 	tab2
 	     
-	   
-    
+let of_string s =
+  let tab = Array.make (String.length s) 'a'
+  in let p i car = tab.(i) <- car;
+		   i+1
+     in String_mp.fold_left p s 0;
+	tab

@@ -23,5 +23,7 @@ val shuffle : 'a array -> 'a array
 (** [l_shift tab index n ] décale les élément a gauche d'index de n rangs vers la droite . Les anciennes valeurs écrasé par le décalage.
 Lance une exeption si index dépasse la taille du tableau ou si le décalage est superieur à l'indice de départ *)
 val l_shift : 'a array -> int -> int -> unit
-  
+
+(** [of_string s] transforme la chaine de caractère [s] en un tableau de taille même taille .Chaque case d'indice [i] est initialisé avec la valeur [s.[i]]*)
+val of_string : string -> char array
 
