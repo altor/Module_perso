@@ -11,6 +11,14 @@ let rec drop n = function
   | hd::tl -> drop (n-1) tl
   
 
+let intersect l1 l2 =
+  List.fold_left (fun acc elem ->
+			 if List.mem elem l2
+			 then elem::acc
+			 else acc)
+		  []
+		  l1
+		   
 
 let shuffle liste =
   Array.to_list (Array_mp.shuffle (Array.of_list liste))
