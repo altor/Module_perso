@@ -38,3 +38,12 @@ let seq i j =
       k when k > j -> List.rev acc
     | k -> aux (k + 1) (k::acc)
   in aux i []
+
+let display f list =
+  print_char '[';
+  let rec aux = function
+    | [] -> print_char ']'
+    | [x] -> f x; aux []
+    | x::xs -> f x ; print_char ';' ; aux xs
+  in aux list
+	     

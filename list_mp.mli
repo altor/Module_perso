@@ -29,4 +29,8 @@ val of_string : string -> char list
 (** {1 Création}*)
 (** [seq i j] genere une liste de nombre consecutif croissant entre [i] et [j]*)
 val seq : int -> int -> int list
+
+(** {1 Divers}*)
+(** [display f l] affiche la liste [l]  en utilisant la fonctoin [f] pour afficher chacun de ses élément. La liste est affichée tel qu'elle serais représentée par un interpréteur Ocaml*)
+val display : ('a -> unit) -> 'a list ->  unit
 			  
