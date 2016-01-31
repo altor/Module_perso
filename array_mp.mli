@@ -27,3 +27,5 @@ val l_shift : 'a array -> int -> int -> unit
 (** [of_string s] transforme la chaine de caractère [s] en un tableau de taille même taille .Chaque case d'indice [i] est initialisé avec la valeur [s.[i]]*)
 val of_string : string -> char array
 
+(** [display array f] affiche le tableau [array]  en utilisant la fonctoin [f] pour afficher chacun de ces élément. Le tableau est affiché tel qu'il serais représenté par un interpréteur Ocaml*)
+val display : ('a -> unit) -> 'a array ->  unit

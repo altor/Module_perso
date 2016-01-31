@@ -64,3 +64,18 @@ let of_string s =
 		   i+1
      in String_mp.fold_left p s 0;
 	tab
+
+let display f array =
+  print_string "[|";
+  (match Array.length array with
+    0 -> ()
+  | 1 -> f array.(0)
+  | n ->
+     f array.(0);
+     Array.iter (fun x ->
+		 print_char ';';
+		 f x)
+		(Array.sub array 1 (n - 1)));
+  print_string "|]"
+	   
+	 
