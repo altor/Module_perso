@@ -31,3 +31,10 @@ let of_string chaine =
        then acc
        else aux (i - 1) ((chaine.[i])::acc)
      in aux (taille - 1) []
+
+let seq i j =
+  let rec aux k acc =
+    match k with
+      k when k > j -> List.rev acc
+    | k -> aux (k + 1) (k::acc)
+  in aux i []

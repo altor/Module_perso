@@ -25,3 +25,8 @@ val shuffle : 'a list -> 'a list
 			    
 (** [of_string chaine] convertie une chaine de caractére en liste *)
 val of_string : string -> char list
+
+(** {1 Création}*)
+(** [seq i j] genere une liste de nombre consecutif croissant entre [i] et [j]*)
+val seq : int -> int -> int list
+			  
