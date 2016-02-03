@@ -34,3 +34,4 @@ val seq : int -> int -> int list
 (** [display f l] affiche la liste [l]  en utilisant la fonctoin [f] pour afficher chacun de ses élément. La liste est affichée tel qu'elle serais représentée par un interpréteur Ocaml*)
 val display : ('a -> unit) -> 'a list ->  unit
 			  
+

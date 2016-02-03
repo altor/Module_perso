@@ -29,3 +29,6 @@ val of_string : string -> char array
 
 (** [display array f] affiche le tableau [array]  en utilisant la fonctoin [f] pour afficher chacun de ces élément. Le tableau est affiché tel qu'il serais représenté par un interpréteur Ocaml*)
 val display : ('a -> unit) -> 'a array ->  unit
+
+(** [dicho_member x f tab] renvoi [true] si l'élément [x] est présent dans le tableau [tab]. La recherche est une dichotomie, elle utilise la fonction [f] pour comparer les éléments. Le tableau [tab] dois donc être trié*)
+val dicho_member : 'a -> ('a -> 'a -> int) -> 'a array -> bool
