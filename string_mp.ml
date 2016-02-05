@@ -40,4 +40,11 @@ let fold_left f s a =
        if i = t then acc
        else aux (i+1) (f acc s.[i])
      in aux 0 a
+
+let fold_left_i f s a =
+  let t = String.length s
+  in let rec aux i acc =
+       if i = t then acc
+       else aux (i+1) (f i acc s.[i])
+     in aux 0 a
 	       

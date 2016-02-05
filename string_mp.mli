@@ -38,3 +38,6 @@ val of_list : char list -> string
 
 (** [fold_left f acc s] est équivalent à [ f (... (f (f acc s.[0]) s.[1]) ...) s.[n-1]]. [s] étant une chaine de caractére de taille n *)
 val fold_left : ('a -> char -> 'a) -> string -> 'a -> 'a
+
+(** [fold_left_i f acc s] est équivalent à [ f (n-1 (... (f 1 (f 0 acc s.[0]) s.[1]) ...) s.[n-1]]. [s] étant une chaine de caractére de taille n *)
+val fold_left_i : (int -> 'a -> char -> 'a) -> string -> 'a -> 'a
