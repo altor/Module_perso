@@ -82,11 +82,11 @@ let display f array =
 let dicho_member x f tab =
   let length = Array.length tab in
   let rec aux debut fin =
-    if debut >= fin then
+    if debut > fin then
       false
     else
       let milieu = (debut + fin) / 2 
-      in match compare tab.(milieu) x with
+      in match f tab.(milieu) x with
 	   0 -> true
 	 | -1 -> aux (milieu + 1) fin
 	 | _ -> aux debut (milieu - 1)
