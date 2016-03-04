@@ -47,4 +47,7 @@ let fold_left_i f s a =
        if i = t then acc
        else aux (i+1) (f i acc s.[i])
      in aux 0 a
+
+let to_list chaine =
+	List.rev(fold_left (fun acc car -> car::acc) chaine [])
 	       
