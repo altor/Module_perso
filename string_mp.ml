@@ -51,3 +51,7 @@ let fold_left_i f s a =
 let to_list chaine =
 	List.rev(fold_left (fun acc car -> car::acc) chaine [])
 	       
+let rotate chaine =
+  let c = hd chaine
+  and cs = tl chaine
+  in cs ^ (Char.escaped c)

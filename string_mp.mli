@@ -44,3 +44,6 @@ val fold_left_i : (int -> 'a -> char -> 'a) -> string -> 'a -> 'a
 
 (** [to_list liste] renvoi la liste des caractères de la liste*)
 val to_list : string -> char list
+
+(** [rotation chaine] met le caractére [chaine.[0]] à la fin de [chaine]*)
+val rotate : string -> string
