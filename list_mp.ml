@@ -48,3 +48,11 @@ let display f list =
   in aux list
 	     
 
+let insert cmp v l =
+  let rec aux acc = function
+    | [] -> acc @ [v]
+    | x::xs ->
+       match cmp v x with
+       | 1 -> aux (x::acc) xs
+       | _ -> (List.rev acc) @ [v;x] @ xs
+  in aux [] l
