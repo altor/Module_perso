@@ -40,6 +40,11 @@ let donner_code arbre =
   in aux "" arbre;
      (hash_code, hash_decode)
 
+let generate s =
+  let alpha = extract_alpha s
+  in let arbre = creer_arbre alpha
+     in donner_code arbre
+
 let code s hash_code =
   let p acc c =
     let code = Hashtbl.find hash_code c

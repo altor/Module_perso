@@ -1,4 +1,3 @@
-
 OUT=mp.cma mp_toplevel
 MLI=array_mp.mli fonction.mli list_mp.mli string_mp.mli matrix.mli math.mli
 CMO=  fonction.cmo  string_mp.cmo array_mp.cmo list_mp.cmo monade.cmo monade_pack.cmo monoide.cmo monoide_pack.cmo matrix.cmo math.cmo
