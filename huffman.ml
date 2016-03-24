@@ -1,3 +1,6 @@
+type t_code = (char, string) Hashtbl.t
+type t_decode = (string, char) Hashtbl.t
+
 let extract_alpha s =
   let alpha = Hashtbl.create 26 in
   let f car =
