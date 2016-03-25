@@ -5,7 +5,8 @@ let length_int n =
   in aux 0 n
 
 let rec pow_int a n =
-  if n = 0 then 1
+  if n < 0 then invalid_arg (string_of_int n)
+  else if n = 0 then 1
   else let r = pow_int a (n / 2)
        in r * r * (if n mod 2 = 0 then 1 else a)
 
