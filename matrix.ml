@@ -28,3 +28,11 @@ let iteri f m =
 let fold_left f acc m =
   let f2 acc2 = Array.fold_left f acc2 
   in Array.fold_left f2 acc m
+
+let copy m =
+  let m2 = Array.make (Array.length m) [||]
+  in for i = 0 to (Array.length m) - 1
+     do
+       m2.(i) <- (Array.copy m.(i))
+     done;
+     m2

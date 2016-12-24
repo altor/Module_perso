@@ -18,6 +18,14 @@ let intersect l1 l2 =
 			 else acc)
 		  []
 		  l1
+
+let (/) l1 l2 =
+  List.fold_left (fun acc elem ->
+      if not(List.mem elem l2)
+      then elem::acc
+      else acc)
+		 []
+		 l1
 		   
 
 let shuffle liste =
@@ -56,3 +64,10 @@ let insert cmp v l =
        | 1 -> aux (x::acc) xs
        | _ -> (List.rev acc) @ [v;x] @ xs
   in aux [] l
+
+let carthesian_product l1 l2 =
+  let p1 acc1 a =
+    let p2 acc2 b = (a,b)::acc2
+    in (List.fold_left p2 [] l2)@acc1
+  in List.fold_left p1 [] l1
+

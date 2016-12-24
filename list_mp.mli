@@ -16,6 +16,10 @@ val drop : int -> 'a list -> 'a list
 (** [intersect l1 l2] renvoie une liste composé des élements de l1 présent dans l2 *)
 val intersect : 'a list -> 'a list -> 'a list
 
+val carthesian_product : 'a list -> 'b list -> ('a * 'b) list
+
+val (/) : 'a list -> 'a list -> 'a list
+  
 (** [insert cmp val l] insert la valeur [val] dans la liste triè [l] en utilisant la fonction [cmp] pour comparer les valeur de [l] entre eux*)
 val insert : ('a -> 'a -> int) -> 'a -> 'a list -> 'a list
 

@@ -47,3 +47,6 @@ val to_list : string -> char list
 
 (** [rotation chaine] met le caractére [chaine.[0]] à la fin de [chaine]*)
 val rotate : string -> string
+
+val iteri : (int -> char -> unit) -> string -> unit
+val words : string -> string list

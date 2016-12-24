@@ -60,9 +60,8 @@ let shuffle tab =
 	     
 let of_string s =
   let tab = Array.make (String.length s) 'a'
-  in let p i car = tab.(i) <- car;
-		   i+1
-     in String_mp.fold_left p s 0;
+  in let p i car = tab.(i) <- car
+     in String_mp.iteri p s;
 	tab
 
 let display f array =
@@ -91,3 +90,10 @@ let dicho_member x f tab =
 	 | -1 -> aux (milieu + 1) fin
 	 | _ -> aux debut (milieu - 1)
   in aux 0 length
+
+let foldi_left f acc tab =
+  let rec aux i acc =
+    if i = Array.length tab
+    then acc
+    else aux (i + 1) (f i acc tab.(i))
+  in aux 0 acc

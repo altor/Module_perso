@@ -32,3 +32,6 @@ val display : ('a -> unit) -> 'a array ->  unit
 
 (** [dicho_member x f tab] renvoi [true] si l'élément [x] est présent dans le tableau [tab]. La recherche est une dichotomie, elle utilise la fonction [f] pour comparer les éléments. Le tableau [tab] dois donc être trié*)
 val dicho_member : 'a -> ('a -> 'a -> int) -> 'a array -> bool
+
+(** comme Array.fold_left mais la fonction est appelé avec l'indice de l'élément en premier argument*)
+val foldi_left : (int -> 'a -> 'b -> 'a) -> 'a -> 'b array -> 'a

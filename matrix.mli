@@ -15,3 +15,5 @@ val iteri : (int -> int -> 'a -> unit) -> 'a array array -> unit
 
 (** [fold_left f acc m] renvoie f (... (f (f acc m.(0).(0)) m.(0).(1)) ...) m.(h-1).(l-1) ou h est la hauteur et l est la longueur de m**)
 val fold_left : ('a -> 'b -> 'a) -> 'a -> 'b array array -> 'a
+
+val copy : 'a array array -> 'a array array

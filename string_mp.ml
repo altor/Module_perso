@@ -25,11 +25,11 @@ let last_n n chaine =
 
 let of_list liste =
   let taille = List.length liste
-  in let chaine = String.create taille
+  in let chaine = String.make taille 'a'
      in let rec aux i liste =
 	  if i = taille
 	  then chaine
-	  else begin String.set chaine i (List.hd liste);
+	  else begin Bytes.set chaine i (List.hd liste);
 	    aux (i+1) (List.tl liste)
 	  end
 	in aux 0 liste
@@ -55,3 +55,12 @@ let rotate chaine =
   let c = hd chaine
   and cs = tl chaine
   in cs ^ (Char.escaped c)
+
+let iteri f chaine =
+  for i = 0 to (String.length chaine) - 1
+  do
+    f i chaine.[i];
+  done
+
+let words chaine =
+  Str.split (Str.regexp " ") chaine
