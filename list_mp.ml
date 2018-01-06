@@ -28,10 +28,20 @@ let (/) l1 l2 =
 		 l1
 		   
 
-let shuffle liste =
-  Array.to_list (Array_mp.shuffle (Array.of_list liste))
+let shuffle d =
+    let nd = List.map (fun c -> (Random.bits (), c)) d in
+    let sond = List.sort compare nd in
+    List.map snd sond
+  (* Array.to_list (Array_mp.shuffle (Array.of_list liste)) *)
 
-
+let rev_between list i j =
+  let rec aux l1 l2 l3 k = function
+    | [] -> (List.rev l1) @ l2 @ (List.rev l3)
+    | x::xs when k < i -> aux (x::l1) l2 l3 (k + 1) xs
+    | x::xs when k > j -> aux l1 l2 (x::l3) (k + 1) xs
+    | x::xs -> aux l1 (x::l2) l3 (k + 1) xs
+  in aux [] [] [] 0 list
+  
 let of_string chaine =
   let taille = String.length chaine
   in let rec aux i acc =
@@ -71,3 +81,11 @@ let carthesian_product l1 l2 =
     in (List.fold_left p2 [] l2)@acc1
   in List.fold_left p1 [] l1
 
+
+let max l cmp =
+  let p max a = if cmp max a = 1 then max else a 
+  in List.fold_left p (List.hd l) l
+
+let min l cmp =
+  let p min a = if cmp min a = -1 then min else a 
+  in List.fold_left p (List.hd l) l

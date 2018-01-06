@@ -29,6 +29,9 @@ val insert : ('a -> 'a -> int) -> 'a -> 'a list -> 'a list
 (** renvoi une nouvelle liste mélangé aléatoirement*)
 val shuffle : 'a list -> 'a list
 
+(** [rev_between] inverse renvoi la liste [l] dont les éléments aux positions [i] à [j] ont été inversés*)
+val rev_between : 'a list -> int -> int -> 'a list
+			    
 (** {1 Conversion}*)
 			    
 (** [of_string chaine] convertie une chaine de caractére en liste *)
@@ -42,4 +45,9 @@ val seq : int -> int -> int list
 (** [display f l] affiche la liste [l]  en utilisant la fonctoin [f] pour afficher chacun de ses élément. La liste est affichée tel qu'elle serais représentée par un interpréteur Ocaml*)
 val display : ('a -> unit) -> 'a list ->  unit
 			  
+(** [max list cmp] renvoi le maximum d'une list*)
+val max : 'a list -> ('a -> 'a -> int) -> 'a
 
+					    			  
+(** [min list cmp] renvoi le maximum d'une list*)
+val min : 'a list -> ('a -> 'a -> int) -> 'a
